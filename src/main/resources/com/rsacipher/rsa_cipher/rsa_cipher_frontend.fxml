@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="730.0" styleClass="background_pane" stylesheets="@rsa_cipher_frontend.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.rsacipher.rsa_cipher.Controller">
+   <children>
+      <Text fill="#6d4289" layoutX="256.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="&lt; RSA Cipher &gt;">
+         <font>
+            <Font name="Roboto Mono Medium" size="26.0" />
+         </font>
+      </Text>
+      <Text fill="#6d4289" layoutX="134.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENTER INPUT">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="area_input" layoutX="14.0" layoutY="102.0" onKeyTyped="#handleInput" prefHeight="120.0" prefWidth="365.0" styleClass="textarea" stylesheets="@rsa_cipher_frontend.css">
+         <font>
+            <Font name="Roboto Mono Regular" size="13.0" />
+         </font></TextArea>
+      <Text fill="#6d4289" layoutX="162.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OUTPUT">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="area_output" layoutX="14.0" layoutY="420.0" prefHeight="164.0" prefWidth="365.0" styleClass="textarea" stylesheets="@rsa_cipher_frontend.css">
+         <font>
+            <Font name="Roboto Mono Regular" size="13.0" />
+         </font></TextArea>
+      <Button fx:id="btn_encrypt" layoutX="14.0" layoutY="607.0" mnemonicParsing="false" onAction="#handleEncrypt" prefHeight="52.0" prefWidth="167.0" style="-fx-background-color: #240337;" stylesheets="@rsa_cipher_frontend.css" text="ENCRYPT" textFill="#6d4289">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="btn_decrypt" layoutX="212.0" layoutY="607.0" mnemonicParsing="false" onAction="#handleDecrypt" prefHeight="52.0" prefWidth="167.0" style="-fx-background-color: #240337;" stylesheets="@rsa_cipher_frontend.css" text="DECRYPT" textFill="#6d4289">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Text fill="#6d4289" layoutX="117.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="INPUT IN ASCII">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="area_input_numeric_values" layoutX="14.0" layoutY="261.0" prefHeight="120.0" prefWidth="365.0" styleClass="textarea" stylesheets="@rsa_cipher_frontend.css">
+         <font>
+            <Font name="Roboto Mono Regular" size="13.0" />
+         </font></TextArea>
+      <Text fill="#6d4289" layoutX="466.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PUBLIC KEY (Encrypt)">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="area_pub_key_n" layoutX="456.0" layoutY="103.0" onKeyTyped="#handlePubN" prefHeight="41.0" prefWidth="252.0" styleClass="textarea" stylesheets="@rsa_cipher_frontend.css">
+         <font>
+            <Font name="Roboto Mono Regular" size="13.0" />
+         </font></TextArea>
+      <Button fx:id="btn_generate_values" layoutX="456.0" layoutY="641.0" mnemonicParsing="false" onAction="#handleGenerateValues" prefHeight="52.0" prefWidth="252.0" style="-fx-background-color: #240337;" stylesheets="@rsa_cipher_frontend.css" text="GENERATE VALUES" textFill="#6d4289">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Text fill="#6d4289" layoutX="462.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRIVATE KEY (Decrypt)">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="area_pub_key_e" layoutX="456.0" layoutY="152.0" onKeyTyped="#handlePubE" prefHeight="41.0" prefWidth="252.0" styleClass="textarea" stylesheets="@rsa_cipher_frontend.css">
+         <font>
+            <Font name="Roboto Mono Regular" size="13.0" />
+         </font></TextArea>
+      <TextArea fx:id="area_priv_key_n" layoutX="456.0" layoutY="240.0" onKeyTyped="#handlePrivN" prefHeight="41.0" prefWidth="252.0" styleClass="textarea" stylesheets="@rsa_cipher_frontend.css">
+         <font>
+            <Font name="Roboto Mono Regular" size="13.0" />
+         </font></TextArea>
+      <TextArea fx:id="area_priv_key_d" layoutX="456.0" layoutY="289.0" onKeyTyped="#handlePrivD" prefHeight="41.0" prefWidth="252.0" styleClass="textarea" stylesheets="@rsa_cipher_frontend.css">
+         <font>
+            <Font name="Roboto Mono Regular" size="13.0" />
+         </font></TextArea>
+      <Text fill="#6d4289" layoutX="436.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#6d4289" layoutX="436.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#6d4289" layoutX="436.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#6d4289" layoutX="436.0" layoutY="316.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <Text fill="#6d4289" layoutX="512.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CALCULATIONS">
+         <font>
+            <Font name="Roboto Mono Medium" size="19.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="area_calculations" editable="false" layoutX="456.0" layoutY="369.0" prefHeight="251.0" prefWidth="252.0" styleClass="textarea" stylesheets="@rsa_cipher_frontend.css">
+         <font>
+            <Font name="Roboto Mono Regular" size="13.0" />
+         </font></TextArea>
+      <Text fill="#2f1a2f" layoutX="114.0" layoutY="698.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marko Adámek">
+         <font>
+            <Font name="Roboto Mono Regular" size="23.0" />
+         </font>
+      </Text>
+      <Line endX="-100.0" endY="588.0" layoutX="512.0" layoutY="87.0" startX="-100.0" stroke="#6d4289" />
+   </children>
+</AnchorPane>
