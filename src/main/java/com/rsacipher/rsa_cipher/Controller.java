@@ -147,7 +147,6 @@ public class Controller {
 
     void checkInputs() {
 
-
         System.out.println("nPubOK = " + nPubOK);
         System.out.println("eOK = " + eOK);
         System.out.println("nPrivOK = " + nPrivOK);
@@ -249,6 +248,7 @@ public class Controller {
                 if (temp.compareTo(BigInteger.ONE) > 0 && temp.compareTo(logic.n) < 0) {
                     System.out.println("Hodnota E JE vacsia ako 1 a mensia ako N");
                     logic.e = temp;
+                    logic.d = logic.e.modInverse(logic.phi);
                     eOK = true;
                     updateCalArea();
                 } else {

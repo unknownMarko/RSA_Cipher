@@ -59,6 +59,7 @@ public class RSALogic {
         do {
             e = new BigInteger(phi.bitLength() - 1, random);
         } while (!gcd(e, phi).equals(BigInteger.ONE) || e.compareTo(BigInteger.ONE) <= 0 || e.compareTo(phi) >= 0);
+        //While
         return e;
     }
 
@@ -136,6 +137,4 @@ public class RSALogic {
         output.append("]");
         return output.toString();
     }
-
-
 }
